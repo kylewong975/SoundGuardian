@@ -12,16 +12,16 @@ export default class App extends Component {
       <Container fluid style={styles.overview}>
         <h1>The Sound Guardian</h1>
         <Row>
-          <Col>
+          <Col lg="4" xs="6">
             <InfoSection schoolName="Stanford University" schoolAddress="450 Serra Mall, Stanford, CA 94305" schoolStatus="SAFE"/>
             <MicrophoneSection />
           </Col>
-          <Col>
-            <AnnouncementsSection />
-          </Col>
-          <Col>
+          <Col lg="4" xs="6">
             <FormSection />
             <MapSection />
+          </Col>
+          <Col lg="4" xs="12">
+            <AnnouncementsSection />
           </Col>
         </Row>
       </Container>

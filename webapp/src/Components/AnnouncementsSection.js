@@ -5,6 +5,8 @@ export default class AnnouncementsSection extends React.Component {
     return(
       <div style={styles.overview}>
         <p style={styles.announcementTitle}>Announcements</p>
+        <div style={styles.announcementContent}>
+        </div>
       </div>
     )
   }
@@ -14,9 +16,11 @@ let styles = {
   overview: {
     padding: 20,
     backgroundColor: "#FFFAFA",
+    borderRadius: "5%"
+  },
+  announcementContent: {
     overflowY: "scroll",
     height: 650,
-    borderRadius: "5%"
   },
   announcementTitle: {
     fontFamily: "Roboto",
