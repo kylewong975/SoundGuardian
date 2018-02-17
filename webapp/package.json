@@ -3,10 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
+    "jquery": "^1.9.1",
+    "moment": "^2.20.1",
+    "popper.js": "^1.12.9",
     "react": "^16.2.0",
+    "react-columns": "^1.1.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
+    "react-transition-group": "^2.2.1",
     "reactstrap": "^4.8.0",
     "redux": "^3.7.2"
   },
