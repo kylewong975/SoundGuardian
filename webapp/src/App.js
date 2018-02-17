@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
+import InfoSection from './Components/InfoSection';
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
-      <div>
-        <h1>Hello World!</h1>
+      <div style={styles.overview}>
+        <h1>The Sound Guardian</h1>
+        <InfoSection schoolName="Stanford University" schoolAddress="450 Serra Mall, Stanford, CA 94305"/>
       </div>
     );
   }
 }
 
-export default App;
+let styles = {
+  overview: {
+    margin: 25,
+  }
+}
