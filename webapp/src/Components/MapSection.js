@@ -25,6 +25,8 @@ let styles = {
   overview: {
     padding: 20,
     marginTop: 10,
+    marginRight: 20,
+    marginLeft: 20,
     backgroundColor: "#FFFFF0",
   }
 }
