@@ -17,6 +17,8 @@ let styles = {
     padding: 20,
     margin: 10,
     backgroundColor: '#F0FFFF',
-    borderRadius: "20%",
+    borderRadius: "5%",
+    overflowY: "scroll",
+    height: 350,
   },
 }

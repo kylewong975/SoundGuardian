@@ -10,11 +10,13 @@ export default class App extends Component {
   render() {
     return (
       <Container fluid style={styles.overview}>
+        <h1>The Sound Guardian</h1>
         <Row>
           <Col>
-            <h1>The Sound Guardian</h1>
             <InfoSection schoolName="Stanford University" schoolAddress="450 Serra Mall, Stanford, CA 94305" schoolStatus="SAFE"/>
             <MicrophoneSection />
+          </Col>
+          <Col>
             <AnnouncementsSection />
           </Col>
           <Col>

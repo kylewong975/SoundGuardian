@@ -19,7 +19,7 @@ let styles = {
     padding: 20,
     margin: 10,
     backgroundColor: '#F0FFF0',
-    borderRadius: "20%",
+    borderRadius: "5%",
     margin: "auto",
   },
   compactSection: {
