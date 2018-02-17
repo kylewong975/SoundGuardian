@@ -15,7 +15,10 @@
     "react-scripts": "1.1.1",
     "react-transition-group": "^2.2.1",
     "reactstrap": "^4.8.0",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "typeface-roboto": "0.0.54",
+    "typeface-titillium-web": "0.0.54",
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
     "start": "react-scripts start",

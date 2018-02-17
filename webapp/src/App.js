@@ -13,7 +13,7 @@ export default class App extends Component {
         <Row>
           <Col>
             <h1>The Sound Guardian</h1>
-            <InfoSection schoolName="Stanford University" schoolAddress="450 Serra Mall, Stanford, CA 94305"/>
+            <InfoSection schoolName="Stanford University" schoolAddress="450 Serra Mall, Stanford, CA 94305" schoolStatus="SAFE"/>
             <MicrophoneSection />
             <AnnouncementsSection />
           </Col>

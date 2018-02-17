@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import schoolIcon from '../stanford.png';
 
 export default class InfoSection extends React.Component {
   render() {
     return(
       <div style={styles.overview}>
-        <p style={styles.compactSection}>School: {this.props.schoolName}</p>
-        <p style={styles.compactSection}>Address: {this.props.schoolAddress}</p>
+        <img style={styles.schoolImage} src={schoolIcon} alt="schoolIcon" />
+        <p style={{...styles.compactSection, ...styles.schoolName}}>{this.props.schoolName}</p>
+        <p style={styles.compactSection}><i>{this.props.schoolAddress}</i></p>
+        <p style={{...styles.compactSection, ...styles.schoolStatus}}><b>{this.props.schoolStatus}</b></p>
       </div>
     )
   }
@@ -13,10 +16,25 @@ export default class InfoSection extends React.Component {
 
 let styles = {
   overview: {
-    margin: 20,
-    border: "1px solid black",
+    padding: 20,
+    margin: 10,
+    backgroundColor: '#F0FFF0',
+    borderRadius: "20%",
+    margin: "auto",
   },
   compactSection: {
     margin: 0,
+    textAlign: "center",
+  },
+  schoolImage: {
+    display: "block",
+    margin: "auto",
+  },
+  schoolName: {
+    fontSize: 28,
+  },
+  schoolStatus: {
+    color: '#00FF00',
+    fontSize: 20
   }
 }
