@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import moment from 'moment';
+import Announcement from './Announcement';
 
 export default class AnnouncementsSection extends React.Component {
   render() {
@@ -6,6 +8,11 @@ export default class AnnouncementsSection extends React.Component {
       <div style={styles.overview}>
         <p style={styles.announcementTitle}>Announcements</p>
         <div style={styles.announcementContent}>
+          <Announcement currentTime={moment().format("MM/DD/YYYY HH:mm:ss")} message="Campus is safe" />
+          <Announcement currentTime={moment().format("MM/DD/YYYY HH:mm:ss")} message="Campus is safe" />
+          <Announcement currentTime={moment().format("MM/DD/YYYY HH:mm:ss")} message="Campus is safe" />
+          <Announcement currentTime={moment().format("MM/DD/YYYY HH:mm:ss")} message="Campus is safe" />
+          <Announcement currentTime={moment().format("MM/DD/YYYY HH:mm:ss")} message="Campus is safe" />
         </div>
       </div>
     )
