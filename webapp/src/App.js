@@ -6,6 +6,7 @@ import AnnouncementsSection from './Components/AnnouncementsSection';
 import FormSection from './Components/FormSection';
 import MapSection from './Components/MapSection';
 import base from './rebase';
+import circleLogo from './SoundGuardian.png';
 
 export default class App extends Component {
   constructor(props) {
@@ -47,6 +48,7 @@ export default class App extends Component {
     return (
       <Container fluid style={styles.overview} id="appColor" >
       <div>
+        <img src={circleLogo} style={styles.logo} />
         <h1 style={styles.whiteText}>The Sound Guardian</h1>
         <p id="toggleName">Microphone Data and Announcement Log</p>
         <input id="toggle" data-placement="right" type="checkbox"/>
@@ -70,6 +72,10 @@ export default class App extends Component {
 }
 
 let styles = {
+  logo: {
+    marginLeft: 30,
+    marginBottom: -100,
+  },
   overview: {
     marginLeft: -15,
     width: "102%",
