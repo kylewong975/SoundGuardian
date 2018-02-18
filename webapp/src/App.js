@@ -43,13 +43,13 @@ export default class App extends Component {
   }
 
   render() {
-    let safeText = (this.state.isSafe == 0 ? "SAFE" : this.state.isSafe == 1 ? "UNSAFE" : "INACTIVE");
+    // let safeText = (this.state.isSafe == 0 ? "SAFE" : this.state.isSafe == 1 ? "UNSAFE" : "INACTIVE");
     return (
       <Container fluid style={styles.overview}>
         <h1>The Sound Guardian</h1>
         <Row>
           <Col lg="4" xs="6">
-            <InfoSection schoolName="Stanford University" schoolAddress="450 Serra Mall, Stanford, CA 94305" schoolStatus={safeText} isSafe={this.state.isSafe}/>
+            <InfoSection microphones={this.state.microphones} schoolName="Stanford University" schoolAddress="450 Serra Mall, Stanford, CA 94305" isSafe={this.state.isSafe}/>
             <MicrophoneSection microphones={this.state.microphones} />
           </Col>
           <Col lg="4" xs="6">
