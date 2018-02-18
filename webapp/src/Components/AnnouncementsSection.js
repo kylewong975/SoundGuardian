@@ -14,7 +14,7 @@ export default class AnnouncementsSection extends React.Component {
     }
     setInterval(() => {
       this.renderItems();
-    }, 1000);
+    }, 5000);
   }
 
   renderItems() {
