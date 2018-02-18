@@ -158,9 +158,7 @@ let styles = {
   },
   overview: {
     padding: 20,
-    marginBottom: 10,
-    marginRight: 20,
-    marginLeft: 20,
+    marginTop: 10,
     borderRadius: "5%",
     backgroundColor: "#FFF0F5"
   }
