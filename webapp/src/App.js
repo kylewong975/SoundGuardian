@@ -22,11 +22,11 @@ export default class App extends Component {
   render() {
     let safeText = (this.state.isSafe == 0 ? "SAFE" : this.state.isSafe == 1 ? "UNSAFE" : "INACTIVE");
     return (
-      <Container fluid style={styles.overview} >
-      <div id="appColor">
+      <Container fluid style={styles.overview} id="appColor" >
+      <div>
         <h1 style={styles.whiteText}>The Sound Guardian</h1>
-        <input id="toggle" type="checkbox"/>
         <p id="toggleName">Microphone Data and Announcement Log</p>
+        <input id="toggle" data-placement="right" type="checkbox"/>
         <div id="app">
           <div id="main">
             <div id="infoAndFormSection">
@@ -49,10 +49,12 @@ export default class App extends Component {
 let styles = {
   overview: {
     marginLeft: -15,
-    width: "103%",
-    height: "100%"
+    width: "102%",
+    height: "100vh",
+    marginBottom: -200,
   },
   whiteText: {
+    paddingTop: 20,
     color: "#ffffff",
   }
 }
