@@ -3,21 +3,43 @@ import moment from 'moment';
 import Announcement from './Announcement';
 
 export default class AnnouncementsSection extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      paragraphs: [],
+    }
+    setInterval(() => {
+      this.renderItems();
+    }, 1000);
+  }
+
+  renderItems() {
+    let arr = [];
+    arr.push(<Announcement currentTime={moment().format("MM/DD/YYYY HH:mm:ss")} message="Campus is safe" />)
+    for(let x = 0; x < this.state.paragraphs.length; x++)
+      arr.push(this.state.paragraphs[x]);
+    this.setState({
+      paragraphs: arr
+    });
+  }
+
   render() {
     return(
       <div style={styles.overview}>
         <p style={styles.announcementTitle}>Announcements</p>
         <div style={styles.announcementContent}>
-          <Announcement currentTime={moment().format("MM/DD/YYYY HH:mm:ss")} message="Campus is safe" />
-          <Announcement currentTime={moment().format("MM/DD/YYYY HH:mm:ss")} message="Campus is safe" />
-          <Announcement currentTime={moment().format("MM/DD/YYYY HH:mm:ss")} message="Campus is safe" />
-          <Announcement currentTime={moment().format("MM/DD/YYYY HH:mm:ss")} message="Campus is safe" />
-          <Announcement currentTime={moment().format("MM/DD/YYYY HH:mm:ss")} message="Campus is safe" />
+          {this.state.paragraphs}
         </div>
       </div>
     )
   }
 }
+
+/*
+<Announcement currentTime={moment().format("MM/DD/YYYY HH:mm:ss")} message="Campus is safe" />
+*/
 
 let styles = {
   overview: {
