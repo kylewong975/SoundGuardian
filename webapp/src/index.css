@@ -46,15 +46,96 @@ h1 {
 
 #mic1 {
   margin-left: 50px;
-  margin-top: 15px;
+  margin-top: 40px;
   background-color: red;
 }
 
 #mic2 {
-  margin-left: 159px;
-  margin-top: 15px;
+  margin-left: 210px;
+  margin-top: 40px;
   background-color: #00cc00;
 }
+
+#mic3 {
+  margin-left: 418px;
+  margin-top: 40px;
+  background-color: #00cc00;
+}
+
+#mic4 {
+  margin-left: 573px;
+  margin-top: 40px;
+  background-color: #00cc00;
+}
+
+#mic5 {
+  margin-left: 610px;
+  margin-top: 90px;
+  background-color: #00cc00;
+}
+
+#mic6 {
+  margin-left: 695px;
+  margin-top: 125px;
+  background-color: #00cc00;
+}
+
+#mic7 {
+  margin-left: 97px;
+  margin-top: 285px;
+  background-color: red;
+}
+
+#mic8 {
+  margin-left: 165px;
+  margin-top: 285px;
+  background-color: #00cc00;
+}
+
+#mic9 {
+  margin-left: 295px;
+  margin-top: 265px;
+  background-color: #00cc00;
+}
+
+#mic10 {
+  margin-left: 500px;
+  margin-top: 160px;
+  background-color: #00cc00;
+}
+
+#mic11 {
+  margin-left: 480px;
+  margin-top: 270px;
+  background-color: #00cc00;
+}
+
+#mic12 {
+  margin-left: 480px;
+  margin-top: 360px;
+  background-color: #00cc00;
+}
+
+#mic13 {
+  margin-left: 653px;
+  margin-top: 270px;
+  background-color: #00cc00;
+}
+
+#mic14 {
+  margin-left: 653px;
+  margin-top: 360px;
+  background-color: #00cc00;
+}
+
+.safeText {
+  background-color: #84e184;
+}
+
+.unSafeText {
+  background-color: #f78f8f;
+}
+
 
 .text {
   position:relative;
@@ -62,7 +143,6 @@ h1 {
   margin-top: 10px;
   padding: 5px;
   display: none;
-  background-color: #f78f8f;
   width: 175px;
   font-size: 15px;
 }
