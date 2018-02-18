@@ -47,6 +47,8 @@ let styles = {
   schoolImage: {
     display: "block",
     margin: "auto",
+    height: 50,
+    width: 50,
   },
   schoolName: {
     fontSize: 28,
