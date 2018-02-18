@@ -19,7 +19,7 @@ export default class AnnouncementsSection extends React.Component {
 
   renderItems() {
     this.setState({
-      message: (this.props.isSafe ? "Campus is safe" : "Campus is UNSAFE")
+      message: (this.props.isSafe == 0 ? "Campus is safe" : this.props.isSafe == 1 ? "Campus is UNSAFE" : "Microphones currently inactive")
     })
     let arr = this.state.paragraphs;
     arr.unshift(<Announcement currentTime={moment().format("MM/DD/YYYY HH:mm:ss")} message={this.state.message} />)

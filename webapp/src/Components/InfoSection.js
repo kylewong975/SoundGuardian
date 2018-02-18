@@ -3,14 +3,19 @@ import schoolIcon from '../stanford.png';
 
 export default class InfoSection extends React.Component {
   renderColor() {
-    if(this.props.isSafe) {
+    if(this.props.isSafe == 0) {
       return {
         color: "#00FF00"
       };
     }
-    else {
+    else if(this.props.isSafe == 1) {
       return {
         color: "#FF0000"
+      };
+    }
+    else {
+      return {
+        color: "#999900"
       };
     }
   }

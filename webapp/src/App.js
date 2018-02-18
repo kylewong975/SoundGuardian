@@ -10,12 +10,17 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isSafe: true, // only change state upon API call detect danger
+      isSafe: 0, // only change state upon API call detect danger
+      // 0 is safe, 1 is danger, 2 is inactive
     }
+
+    setInterval(() => {
+      //fetch(...)
+    }, 1000); // fetch API every second
   }
 
   render() {
-    let safeText = (this.state.isSafe ? "SAFE" : "UNSAFE");
+    let safeText = (this.state.isSafe == 0 ? "SAFE" : this.state.isSafe == 1 ? "UNSAFE" : "INACTIVE");
     return (
       <Container fluid style={styles.overview}>
         <h1>The Sound Guardian</h1>
