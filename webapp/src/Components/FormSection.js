@@ -8,12 +8,24 @@ export default class FormSection extends React.Component {
       phoneNumbers: "",
       title: "",
       message: "",
+      successText: "",
+      failureText: "",
     }
+
+    setInterval(() => {
+      this.setState(previousState => {
+        return {
+          successText: "",
+          failureText: ""
+        };
+      });
+    }, 5000);
 
     this.handlePhoneChange = this.handlePhoneChange.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleMessageChange = this.handleMessageChange.bind(this);
     this.submitForm = this.submitForm.bind(this);
+    this.resetForm = this.resetForm.bind(this);
   }
 
   handlePhoneChange(e) {
@@ -44,7 +56,37 @@ export default class FormSection extends React.Component {
         authorization: 'Bearer 90UZ2x1jcmmBVRnI4qgNsQd0tHW0YqeEMvDUccpqjm_PQtnYDi2v81p8bvh4M8vu'
       }
     }).then((res) => {
+      // reset form as well
+      this.setState({
+        phoneNumbers: "",
+        title: "",
+        message: "",
+      });
+
+      // success
+      if(res.status == 200) {
+        this.setState({
+          successText: "Text successfully sent!",
+          failureText: ""
+        });
+      }
+      else {
+        this.setState({
+          successText: "",
+          failureText: "Failed to send text"
+        });
+      }
+
       console.log(res);
+    })
+  }
+
+  resetForm(e) {
+    e.preventDefault();
+    this.setState({
+      phoneNumbers: "",
+      title: "",
+      message: "",
     })
   }
 
@@ -52,14 +94,14 @@ export default class FormSection extends React.Component {
     return (
       <div style={styles.overview}>
         <p style={styles.formTitle}>Emergency Form</p>
-        <form onSubmit={this.submitForm}>
+        <form>
           <Container>
               <Row>
                 <Col lg="6" xs="6">
                   Phone Numbers:
                 </Col>
                 <Col lg="6" xs="6">
-                  <input type="text" name="phoneNumbers" onChange={this.handlePhoneChange} />
+                  <input type="text" name="phoneNumbers" value={this.state.phoneNumbers} onChange={this.handlePhoneChange} />
                 </Col>
               </Row>
             <br></br>
@@ -68,7 +110,7 @@ export default class FormSection extends React.Component {
                   Title:
                 </Col>
                 <Col lg="6" xs="6">
-                  <input type="text" name="title" onChange={this.handleTitleChange} />
+                  <input type="text" name="title" value={this.state.title} onChange={this.handleTitleChange} />
                 </Col>
               </Row>
             <br></br>
@@ -81,7 +123,12 @@ export default class FormSection extends React.Component {
                 </Col>
               </Row>
             <br/>
-            <input type="submit" value="Send"/>
+            <div style={styles.buttonArea}>
+              <input type="submit" value="Send" style={styles.formButton} onClick={this.submitForm}/>
+              <input type="reset" value="Reset" style={styles.formButton} onClick={this.resetForm}/>
+            </div>
+            <p style={styles.successText}><b>{this.state.successText}</b></p>
+            <p style={styles.failureText}><b>{this.state.failureText}</b></p>
           </Container>
         </form>
       </div>
@@ -90,9 +137,24 @@ export default class FormSection extends React.Component {
 }
 
 let styles = {
+  buttonArea: {
+    textAlign: "center"
+  },
   formTitle: {
     fontSize: 30,
     textAlign: "center",
+  },
+  formButton: {
+    width: "40%",
+    margin: 5,
+  },
+  successText: {
+    color: "#00FF00",
+    textAlign: "center"
+  },
+  failureText: {
+    color: "#FF0000",
+    textAlign: "center"
   },
   overview: {
     padding: 20,
