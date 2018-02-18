@@ -128,8 +128,9 @@ let styles = {
     marginTop: "1em",
     marginBottom: "1em",
     marginRight: "1em",
-    backgroundColor: "#FFFFF0",
+    backgroundColor: "#4F6D7A",
     borderRadius: "5%",
+    height: 700,
     /*display: "flex",*/
   }
 }

@@ -12,6 +12,11 @@ h1 {
   text-align: center;
 }
 
+#appColor {
+  background-color: #084C61;
+}
+
+/****Sections divided by flex****/
 #app {
   /* the parent container */
   display: flex;
@@ -21,7 +26,6 @@ h1 {
   /* the main element (for things that are always showing) */
   flex-grow: 3;
   flex-shrink: 3;
-  background-color: purple;
   display: flex;
 }
 
@@ -36,6 +40,7 @@ h1 {
   height: 100%;
 }
 
+/****Microphone dots on the map****/
 .circle {
   border-radius: 50%;
   width: 20px;
@@ -136,7 +141,6 @@ h1 {
   background-color: #f78f8f;
 }
 
-
 .text {
   position:relative;
   margin-left: 10px;
@@ -156,7 +160,13 @@ br {
   display: block;
 }
 
+/****Checkbox toggle****/
 #toggle:checked ~ * #sidebar {
   display: none;
   background-color: blue;
+}
+
+#toggleName {
+  text-align: center;
+  color: white;
 }

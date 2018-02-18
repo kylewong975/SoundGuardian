@@ -16,7 +16,7 @@ let styles = {
   overview: {
     padding: 20,
     margin: 10,
-    backgroundColor: '#F0FFFF',
+    backgroundColor: '#FAF2A1',
     borderRadius: "5%",
     overflowY: "scroll",
     height: 350,

@@ -46,7 +46,7 @@ let styles = {
     marginRight: 10,
     marginLeft: 10,
     marginBottom: 10,
-    backgroundColor: "#FFFAFA",
+    backgroundColor: "#FAF2A1",
     borderRadius: "5%"
   },
   announcementContent: {

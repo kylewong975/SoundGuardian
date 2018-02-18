@@ -36,7 +36,8 @@ let styles = {
   overview: {
     padding: 20,
     margin: "1em",
-    backgroundColor: '#F0FFF0',
+    backgroundColor: '#E3B505',
+    //'#F0FFF0',
     borderRadius: "5%",
   },
   compactSection: {

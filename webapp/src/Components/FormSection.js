@@ -160,6 +160,6 @@ let styles = {
     padding: 20,
     margin: "1em",
     borderRadius: "5%",
-    backgroundColor: "#FFF0F5"
+    backgroundColor: "#DB504A"
   }
 }
