@@ -16,10 +16,10 @@ export default class AnnouncementsSection extends React.Component {
   }
 
   renderItems() {
-    let arr = [];
-    arr.push(<Announcement currentTime={moment().format("MM/DD/YYYY HH:mm:ss")} message="Campus is safe" />)
-    for(let x = 0; x < this.state.paragraphs.length; x++)
-      arr.push(this.state.paragraphs[x]);
+    let arr = this.state.paragraphs;
+    arr.unshift(<Announcement currentTime={moment().format("MM/DD/YYYY HH:mm:ss")} message="Campus is safe" />)
+    //for(let x = 0; x < this.state.paragraphs.length; x++)
+      //arr.push(this.state.paragraphs[x]);
     this.setState({
       paragraphs: arr
     });
