@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
 import Microphone from './Microphone';
+import base from '../rebase';
 
-export default class MicrophoneSection extends React.Component {
+class MicrophoneSection extends React.Component {
+
+  renderMicrophone(mic) {
+    return (<Microphone name={mic.name}
+                        location={mic.location}
+                        condition={mic.condition}
+                        status={mic.status} />);
+  }
+
   render() {
     return(
       <div style={styles.overview}>
         <p style={styles.microphoneTitle}>Mic Information</p>
-        <Microphone name="Microphone 1" location="Hallway 1" condition="Active" status="SAFE" />
-        <Microphone name="Microphone 2" location="Corridor" condition="Active" status="SAFE" />
+        {this.props.microphones.map(this.renderMicrophone)}
       </div>
     )
   }
@@ -31,3 +39,5 @@ let styles = {
     textAlign: "center",
   }
 }
+
+export default MicrophoneSection;

@@ -5,6 +5,7 @@ import MicrophoneSection from './Components/MicrophoneSection';
 import AnnouncementsSection from './Components/AnnouncementsSection';
 import FormSection from './Components/FormSection';
 import MapSection from './Components/MapSection';
+import base from './rebase';
 
 export default class App extends Component {
   constructor(props) {
@@ -12,15 +13,37 @@ export default class App extends Component {
     this.state = {
       isSafe: 0, // only change state upon API call detect danger
       // 0 is safe, 1 is danger, 2 is inactive
+      microphones: [],
     }
 
-    setInterval(() => {
+    //setInterval(() => {
       //fetch(...)
-    }, 1000); // fetch API every second
+    //}, 1000); // fetch API every second
+  }
+
+  componentWillMount() {
+    /*
+     * We bind the 'chats' firebase endopint to our 'messages' state.
+     * Anytime the firebase updates, it will call 'setState' on this component
+     * with the new state.
+     *
+     * Any time we call 'setState' on our 'messages' state, it will
+     * updated the Firebase '/chats' endpoint. Firebase will then emit the changes,
+     * which causes our local instance (and any other instances) to update
+     * state to reflect those changes.
+     */
+    this.ref = base.syncState('microphones', {
+      context: this,
+      state: 'microphones',
+      asArray: true
+    });
+  }
+  componentWillUnmount() {
+    base.removeBinding(this.ref);
   }
 
   render() {
-    let safeText = (this.state.isSafe == 0 ? "SAFE" : this.state.isSafe == 1 ? "UNSAFE" : "INACTIVE");
+    // let safeText = (this.state.isSafe == 0 ? "SAFE" : this.state.isSafe == 1 ? "UNSAFE" : "INACTIVE");
     return (
       <Container fluid style={styles.overview} id="appColor" >
       <div>
@@ -30,13 +53,13 @@ export default class App extends Component {
         <div id="app">
           <div id="main">
             <div id="infoAndFormSection">
-              <InfoSection schoolName="Stanford University" schoolAddress="450 Serra Mall, Stanford, CA 94305" schoolStatus={safeText} isSafe={this.state.isSafe}/>
+              <InfoSection microphones={this.state.microphones} schoolName="Stanford University" schoolAddress="450 Serra Mall, Stanford, CA 94305" isSafe={this.state.isSafe}/>
               <FormSection />
             </div>
             <MapSection />
           </div>
           <div id="sidebar">
-            <MicrophoneSection />
+            <MicrophoneSection microphones={this.state.microphones} />
             <AnnouncementsSection isSafe={this.state.isSafe} />
           </div>
         </div>
