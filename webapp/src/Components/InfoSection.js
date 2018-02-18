@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import schoolIcon from '../stanford.png';
 
 export default class InfoSection extends React.Component {
+
   renderColor() {
     if(this.props.isSafe == 0) {
       return {
