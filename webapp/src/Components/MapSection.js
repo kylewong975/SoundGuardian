@@ -122,6 +122,7 @@ let styles = {
   mapTitle: {
     fontSize: 30,
     textAlign: "center",
+    color: "white",
   },
   overview: {
     padding: 20,

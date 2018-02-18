@@ -12,6 +12,11 @@ h1 {
   text-align: center;
 }
 
+@font-face {
+  font-family: 'Roboto';
+  src: local('Roboto'), url(./Roboto-Regular.ttf) format('ttf');
+}
+
 #appColor {
   background-color: #084C61;
 }
