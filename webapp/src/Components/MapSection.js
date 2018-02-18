@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import schoolMap from '../schoolMap.png';
+import schoolMap from '../schoolLayout.png';
 
 export default class MapSection extends React.Component {
   render() {
@@ -7,7 +7,7 @@ export default class MapSection extends React.Component {
       <div style={styles.overview}>
         <p style={styles.mapTitle}>School Map</p>
         <div style={styles.mapImage}>
-          <img src="schoolMap.png" />
+          <img src="schoolLayout.png" />
         </div>
       </div>
     )
@@ -18,7 +18,7 @@ let styles = {
   mapImage: {
     backgroundImage: "url(" + schoolMap + ")",
     backgroundSize: "cover",
-    height: 350,
+    height: 400,
   },
   mapTitle: {
     fontSize: 30,
