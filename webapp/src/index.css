@@ -51,14 +51,13 @@ h1 {
   border-radius: 50%;
   width: 20px;
   height: 20px;
-  background-color: red;
   position: absolute;
 }
 
 #mic1 {
   margin-left: 50px;
   margin-top: 40px;
-  background-color: red;
+  background-color: #00cc00;
 }
 
 #mic2 {
@@ -94,7 +93,7 @@ h1 {
 #mic7 {
   margin-left: 97px;
   margin-top: 285px;
-  background-color: red;
+  background-color: #ff0000;
 }
 
 #mic8 {
