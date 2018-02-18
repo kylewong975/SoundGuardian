@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 
+let administratorContacts = ["7146816055", "9493504549"];
+
 export default class FormSection extends React.Component {
   constructor(props) {
     super(props);
@@ -10,6 +12,8 @@ export default class FormSection extends React.Component {
       message: "",
       successText: "",
       failureText: "",
+      status: -1,
+      hasSentMessage: false, // has sent the unsafe message?
     }
 
     setInterval(() => {
@@ -20,6 +24,55 @@ export default class FormSection extends React.Component {
         };
       });
     }, 5000);
+
+    setInterval(() => {
+      for(let x = 0; x < this.props.microphones.length; x++) {
+        if(this.props.microphones[x].status == 1) {
+          this.setState({
+            status: 1,
+          });
+          break;
+        }
+        else if(this.props.microphones[x].status == 0) {
+          this.setState({
+            status: 0,
+          });
+        }
+      }
+      let is2 = true;
+      for(let x = 0; x < this.props.microphones.length; x++) {
+        if(this.props.microphones[x].status != 2) {
+          is2 = false;
+          break;
+        }
+      }
+      if(is2) { // inactive
+        this.setState({
+          status: 2,
+        });
+      }
+
+      if(this.state.status == 1 && !this.state.hasSentMessage) {
+        console.log(123);
+        administratorContacts.map((num) => {
+          let url = `https://messagebird.lib.id/sms/?recipient=1${num}&body=ALERT:%20Campus%20is%20currently%20UNSAFE.%20Please%20lock%20all%20doors%20if%20you%20are%20inside,%20or%20go%20to%20the%20nearest%20room%20if%20you%20are%20outside.`;
+          fetch(url, {
+            method: 'get',
+            headers: {
+              authorization: 'Bearer 90UZ2x1jcmmBVRnI4qgNsQd0tHW0YqeEMvDUccpqjm_PQtnYDi2v81p8bvh4M8vu'
+            }
+          })
+        });
+        this.setState({
+          hasSentMessage: true
+        });
+      }
+      else if(this.state.status == 0) {
+        this.setState({
+          hasSentMessage: false
+        });
+      }
+    }, 1000);
 
     this.handlePhoneChange = this.handlePhoneChange.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
@@ -98,7 +151,7 @@ export default class FormSection extends React.Component {
           <Container>
               <Row>
                 <Col lg="6" xs="6">
-                  Phone Numbers:
+                  Contact:
                 </Col>
                 <Col lg="6" xs="6">
                   <input type="text" name="phoneNumbers" value={this.state.phoneNumbers} onChange={this.handlePhoneChange} />

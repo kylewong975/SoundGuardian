@@ -54,13 +54,13 @@ export default class App extends Component {
           <div id="main">
             <div id="infoAndFormSection">
               <InfoSection microphones={this.state.microphones} schoolName="Stanford University" schoolAddress="450 Serra Mall, Stanford, CA 94305" isSafe={this.state.isSafe}/>
-              <FormSection />
+              <FormSection microphones={this.state.microphones} />
             </div>
-            <MapSection />
+            <MapSection microphones={this.state.microphones} />
           </div>
           <div id="sidebar">
             <MicrophoneSection microphones={this.state.microphones} />
-            <AnnouncementsSection isSafe={this.state.isSafe} />
+            <AnnouncementsSection microphones={this.state.microphones} />
           </div>
         </div>
       </div>
