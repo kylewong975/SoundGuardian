@@ -53,44 +53,36 @@ export default class FormSection extends React.Component {
       <div style={styles.overview}>
         <p style={styles.formTitle}>Emergency Form</p>
         <form onSubmit={this.submitForm}>
-          <label>
-            <Container>
+          <Container>
               <Row>
-                <Col>
+                <Col lg="6" xs="6">
                   Phone Numbers:
                 </Col>
-                <Col>
+                <Col lg="6" xs="6">
                   <input type="text" name="phoneNumbers" onChange={this.handlePhoneChange} />
                 </Col>
               </Row>
-            </Container>
-          </label>
-          <label>
-            <Container>
+            <br></br>
               <Row>
-                <Col>
+                <Col lg="6" xs="6">
                   Title:
                 </Col>
-                <Col>
+                <Col lg="6" xs="6">
                   <input type="text" name="title" onChange={this.handleTitleChange} />
                 </Col>
               </Row>
-            </Container>
-          </label>
-          <label>
-            <Container>
+            <br></br>
               <Row>
-                <Col>
+                <Col lg="6" xs="6">
                   Message:
                 </Col>
-                <Col>
-                  <textarea rows="10" cols="40" type="text" value={this.state.message} onChange={this.handleMessageChange}></textarea>
+                <Col lg="6" xs="6">
+                  <textarea rows="5" type="text" value={this.state.message} onChange={this.handleMessageChange}></textarea>
                 </Col>
               </Row>
-            </Container>
-          </label>
-          <br/>
-          <input type="submit" value="Send"/>
+            <br/>
+            <input type="submit" value="Send"/>
+          </Container>
         </form>
       </div>
     )
