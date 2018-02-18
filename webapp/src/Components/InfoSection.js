@@ -22,7 +22,7 @@ export default class InfoSection extends React.Component {
 
   render() {
     return(
-      <div style={styles.overview}>
+      <div id="whyreactwhy" style={styles.overview}>
         <img style={styles.schoolImage} src={schoolIcon} alt="schoolIcon" />
         <p style={{...styles.compactSection, ...styles.schoolName}}>{this.props.schoolName}</p>
         <p style={styles.compactSection}><i>{this.props.schoolAddress}</i></p>
@@ -35,10 +35,9 @@ export default class InfoSection extends React.Component {
 let styles = {
   overview: {
     padding: 20,
-    margin: 10,
+    margin: "1em",
     backgroundColor: '#F0FFF0',
     borderRadius: "5%",
-    margin: "auto",
   },
   compactSection: {
     margin: 0,

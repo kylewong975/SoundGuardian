@@ -24,21 +24,32 @@ export default class App extends Component {
     return (
       <Container fluid style={styles.overview}>
         <h1>The Sound Guardian</h1>
-        <Row>
-        {/*First 2 col divs, lg="4" xs="6"
-        Last col div, lg="4" xs="12"*/}
-          <Col xs="4">
-            <InfoSection schoolName="Stanford University" schoolAddress="450 Serra Mall, Stanford, CA 94305" schoolStatus={safeText} isSafe={this.state.isSafe}/>
-            <FormSection />
-          </Col>
-          {/*<Col>
+        <input id="toggle" type="checkbox" />
+        <div id="app">
+          <div id="main">
+            <div id="infoAndFormSection">
+              <InfoSection schoolName="Stanford University" schoolAddress="450 Serra Mall, Stanford, CA 94305" schoolStatus={safeText} isSafe={this.state.isSafe}/>
+              <FormSection />
+            </div>
+            <MapSection />
+            {/*<Row>
+            /*First 2 col divs, lg="4" xs="6"
+            Last col div, lg="4" xs="12"
+              <Col xs="4">
+                <InfoSection schoolName="Stanford University" schoolAddress="450 Serra Mall, Stanford, CA 94305" schoolStatus={safeText} isSafe={this.state.isSafe}/>
+                <FormSection />
+              </Col>
+              <Col xs="4">
+                <MapSection />
+              </Col>
+            </Row>
+            */}
+          </div>
+          <div id="sidebar">
             <MicrophoneSection />
             <AnnouncementsSection isSafe={this.state.isSafe} />
-          </Col>*/}
-          <Col xs="8">
-            <MapSection />
-          </Col>
-        </Row>
+          </div>
+        </div>
       </Container>
     );
   }

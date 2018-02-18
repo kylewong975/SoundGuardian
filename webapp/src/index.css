@@ -7,3 +7,76 @@ body {
 input, textarea {
   width: 100%
 }
+
+h1 {
+  text-align: center;
+}
+
+#app {
+  /* the parent container */
+  display: flex;
+}
+
+#main {
+  /* the main element (for things that are always showing) */
+  flex-grow: 3;
+  flex-shrink: 3;
+  background-color: purple;
+  display: flex;
+}
+
+#infoAndFormSection {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+#mapSection {
+  flex-grow: 2;
+  flex-shrink: 2;
+  height: 100%;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  position: absolute;
+}
+
+#mic1 {
+  margin-left: 50px;
+  margin-top: 15px;
+  background-color: red;
+}
+
+#mic2 {
+  margin-left: 159px;
+  margin-top: 15px;
+  background-color: #00cc00;
+}
+
+.text {
+  position:relative;
+  margin-left: 10px;
+  margin-top: 10px;
+  padding: 5px;
+  display: none;
+  background-color: #f78f8f;
+  width: 175px;
+  font-size: 15px;
+}
+
+br {
+   display: block;
+   margin: 1px 0;
+}
+
+.circle:hover .text {
+  display: block;
+}
+
+#toggle:checked ~ * #sidebar {
+  display: none;
+  background-color: blue;
+}

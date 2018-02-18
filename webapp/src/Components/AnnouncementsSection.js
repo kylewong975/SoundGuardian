@@ -43,13 +43,15 @@ export default class AnnouncementsSection extends React.Component {
 let styles = {
   overview: {
     padding: 20,
-    marginRight: 20,
+    marginRight: 10,
+    marginLeft: 10,
+    marginBottom: 10,
     backgroundColor: "#FFFAFA",
     borderRadius: "5%"
   },
   announcementContent: {
     overflowY: "scroll",
-    height: 650,
+    height: 250,
   },
   announcementTitle: {
     fontFamily: "Roboto",
