@@ -2,13 +2,26 @@ import React, { Component } from 'react';
 import schoolIcon from '../stanford.png';
 
 export default class InfoSection extends React.Component {
+  renderColor() {
+    if(this.props.isSafe) {
+      return {
+        color: "#00FF00"
+      };
+    }
+    else {
+      return {
+        color: "#FF0000"
+      };
+    }
+  }
+
   render() {
     return(
       <div style={styles.overview}>
         <img style={styles.schoolImage} src={schoolIcon} alt="schoolIcon" />
         <p style={{...styles.compactSection, ...styles.schoolName}}>{this.props.schoolName}</p>
         <p style={styles.compactSection}><i>{this.props.schoolAddress}</i></p>
-        <p style={{...styles.compactSection, ...styles.schoolStatus}}><b>{this.props.schoolStatus}</b></p>
+        <p style={{...styles.compactSection, ...styles.schoolStatus, ...this.renderColor()}}><b>{this.props.schoolStatus}</b></p>
       </div>
     )
   }
@@ -34,7 +47,6 @@ let styles = {
     fontSize: 28,
   },
   schoolStatus: {
-    color: '#00FF00',
     fontSize: 20
   }
 }
