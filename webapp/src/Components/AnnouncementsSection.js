@@ -51,7 +51,7 @@ let styles = {
   },
   announcementContent: {
     overflowY: "scroll",
-    height: 250,
+    height: 170,
   },
   announcementTitle: {
     fontFamily: "Roboto",

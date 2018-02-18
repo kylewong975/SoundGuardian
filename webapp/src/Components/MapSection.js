@@ -130,7 +130,7 @@ let styles = {
     marginRight: "1em",
     backgroundColor: "#4F6D7A",
     borderRadius: "5%",
-    height: 700,
+    height: 623,
     /*display: "flex",*/
   }
 }
