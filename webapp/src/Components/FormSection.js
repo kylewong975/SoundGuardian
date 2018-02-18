@@ -4,11 +4,39 @@ import { Container, Row, Col } from 'reactstrap';
 export default class FormSection extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      phoneNumbers: "",
+      title: "",
+      message: "",
+    }
+
+    this.handlePhoneChange = this.handlePhoneChange.bind(this);
+    this.handleTitleChange = this.handleTitleChange.bind(this);
+    this.handleMessageChange = this.handleMessageChange.bind(this);
+    this.submitForm = this.submitForm.bind(this);
+  }
+
+  handlePhoneChange(e) {
+    this.setState({
+      phoneNumbers: e.target.value
+    });
+  }
+
+  handleTitleChange(e) {
+    this.setState({
+      title: e.target.value
+    });
+  }
+
+  handleMessageChange(e) {
+    this.setState({
+      message: e.target.value
+    });
   }
 
   submitForm(e) {
     e.preventDefault();
-    let query = "?recipient=15599772114&body=hello";
+    let query = `?recipient=1${this.state.phoneNumbers}&body=${this.state.title + ": " + this.state.message}`;
     let url = `https://messagebird.lib.id/sms/${query}`;
     fetch(url, {
       method: 'get',
@@ -24,7 +52,7 @@ export default class FormSection extends React.Component {
     return (
       <div style={styles.overview}>
         <p style={styles.formTitle}>Emergency Form</p>
-        <form>
+        <form onSubmit={this.submitForm}>
           <label>
             <Container>
               <Row>
@@ -32,18 +60,37 @@ export default class FormSection extends React.Component {
                   Phone Numbers:
                 </Col>
                 <Col>
-                  <input type="text" name="phoneNumbers" />
+                  <input type="text" name="phoneNumbers" onChange={this.handlePhoneChange} />
                 </Col>
               </Row>
             </Container>
           </label>
           <label>
-            Title: <input type="text" name="title" />
+            <Container>
+              <Row>
+                <Col>
+                  Title:
+                </Col>
+                <Col>
+                  <input type="text" name="title" onChange={this.handleTitleChange} />
+                </Col>
+              </Row>
+            </Container>
           </label>
           <label>
-            Message: <textarea></textarea>
+            <Container>
+              <Row>
+                <Col>
+                  Message:
+                </Col>
+                <Col>
+                  <textarea rows="10" cols="40" type="text" value={this.state.message} onChange={this.handleMessageChange}></textarea>
+                </Col>
+              </Row>
+            </Container>
           </label>
-          <input type="Submit" value="Send" onClick={this.submitForm}/>
+          <br/>
+          <input type="submit" value="Send"/>
         </form>
       </div>
     )
