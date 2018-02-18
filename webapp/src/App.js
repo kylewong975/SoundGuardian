@@ -26,7 +26,7 @@ export default class App extends Component {
       <div id="appColor">
         <h1 style={styles.whiteText}>The Sound Guardian</h1>
         <input id="toggle" type="checkbox"/>
-        <p id="toggleName">Microphone Data and Announcement Log</p>
+        <p id="toggleName">Microphone Information and Announcement Log</p>
         <div id="app">
           <div id="main">
             <div id="infoAndFormSection">

@@ -43,9 +43,10 @@ export default class AnnouncementsSection extends React.Component {
 let styles = {
   overview: {
     padding: 20,
-    marginRight: 10,
-    marginLeft: 10,
-    marginBottom: 10,
+    marginTop: "1em",
+    marginBottom: "1em",
+    marginRight: "1em",
+    marginLeft: "1em",
     backgroundColor: "#FAF2A1",
     borderRadius: "5%"
   },
