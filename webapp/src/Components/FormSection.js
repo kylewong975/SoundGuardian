@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 
-let administratorContacts = ["7146816055", "9493504549"];
+let administratorContacts = ["7146816055"];
 
 export default class FormSection extends React.Component {
   constructor(props) {
